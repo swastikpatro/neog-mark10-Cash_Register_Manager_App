@@ -296,3 +296,21 @@ ul {
 Cash Register App
 ==================
 */
+
+body {
+  text-align: center;
+}
+
+table {
+  margin: 0 auto;
+}
+
+.header p {
+  margin: 0 auto;
+}
+
+table,
+th,
+td {
+  border: 1px solid var(--primary-500);
+}
