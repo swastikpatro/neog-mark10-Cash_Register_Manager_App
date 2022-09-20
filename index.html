@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
     <title>Cash Register App</title>
     <link rel="stylesheet" href="./css/normalize.css" />
     <link rel="stylesheet" href="./css/styles.css" />
@@ -16,16 +20,28 @@
         Enter the bill amount and cash given by the customer and know minimum
         number of notes to return
       </p>
+      <div class="alert"></div>
     </header>
 
     <form name="form">
       <div class="bill-input">
         <label for="bill-input">bill amount:</label>
-        <input type="number" name="bill-input" id="bill-input" />
+        <input
+          type="number"
+          name="bill-input"
+          id="bill-input"
+          placeholder="enter the bill amount"
+        />
       </div>
       <div class="customer-input">
         <label for="customer-input">cash given:</label>
-        <input type="number" name="customer-input" id="customer-input" />
+
+        <input
+          type="number"
+          name="customer-input"
+          id="customer-input"
+          placeholder="enter the amount that customer paid"
+        />
       </div>
       <div class="btn-container">
         <button class="btn">Check</button>
@@ -62,5 +78,28 @@
         </tr>
       </table>
     </section>
+
+    <!-- footer -->
+    <footer class="footer">
+      <h2>social links</h2>
+      <ul class="footer-links">
+        <li>
+          <a href="https://github.com/swastikpatro"
+            ><i class="fa-brands fa-github"></i
+          ></a>
+        </li>
+        <li>
+          <a href="https://twitter.com/Swastik2001"
+            ><i class="fa-brands fa-twitter"></i
+          ></a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/swastik-patro-2a54bb19b/"
+            ><i class="fa-brands fa-linkedin"></i
+          ></a>
+        </li>
+      </ul>
+    </footer>
+    <!-- end of footer -->
   </body>
 </html>
