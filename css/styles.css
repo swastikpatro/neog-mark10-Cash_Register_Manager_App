@@ -298,14 +298,193 @@ Cash Register App
 */
 
 body {
+  height: 100vh;
+  display: grid;
   text-align: center;
 }
 
-table {
-  margin: 0 auto;
+.header {
+  position: relative;
+}
+
+.alert {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  padding: 0.25rem 1rem;
+  letter-spacing: var(--letterSpacing);
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.alert-danger {
+  background: var(--red-dark);
+  color: var(--red-light);
+}
+.alert-success {
+  background: var(--green-dark);
+  color: var(--green-light);
+}
+
+.alert.show-alert {
+  top: 5%;
+  opacity: 1;
+}
+
+.header .heading {
+  height: 4rem;
+  background: var(--primary-500);
+  color: var(--white);
+  font-size: 2rem;
+  display: grid;
+  place-items: center;
+  letter-spacing: var(--letterSpacing);
 }
 
 .header p {
+  margin: 0 auto;
+  width: 80vw;
+  max-width: 500px;
+  /* border: 2px solid red; */
+  margin-bottom: 0.25rem;
+  color: var(--grey-500);
+  letter-spacing: var(--letterSpacing);
+}
+
+@media screen and (min-width: 768px) {
+  .header p {
+    margin-bottom: 1rem;
+  }
+}
+
+[name='form'] {
+  height: 30vh;
+  margin: 0 auto;
+  width: 80vw;
+  max-width: 800px;
+  /* border: 2px solid red; */
+  background: var(--primary-100);
+  padding: 2rem 1rem;
+  border-radius: 1rem;
+}
+
+.bill-input,
+.customer-input {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 0 0.5rem;
+  margin: 0 auto;
+  max-width: 500px;
+  margin-bottom: 1rem;
+}
+
+.bill-input label,
+.customer-input label {
+  text-transform: capitalize;
+  letter-spacing: var(--letterSpacing);
+}
+
+.bill-input input,
+.customer-input input {
+  border: 2px solid var(--grey-200);
+  letter-spacing: var(--letterSpacing);
+  padding: 0.25rem 0.75rem;
+  color: var(--grey-500);
+  border-radius: var(--borderRadius);
+  transition: var(--transition);
+}
+
+.bill-input input::placeholder,
+.customer-input input::placeholder {
+  font-size: 0.9rem;
+  font-style: italic;
+  letter-spacing: var(--letterSpacing);
+}
+
+.bill-input input:focus,
+.customer-input input:focus {
+  outline: 0;
+  border-color: var(--primary-500);
+}
+
+.btn-container {
+  width: 60vw;
+  max-width: 400px;
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  /* border: 2px solid red; */
+}
+
+.btn {
+  font-size: 1rem;
+  padding: 0.5rem 1.5rem;
+}
+
+.output-section {
+  /* border: 2px solid red; */
+  width: 85vw;
+  margin: 0 auto;
+  margin-top: 0;
+}
+
+.output-section h3 {
+  font-size: 1.5rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: var(--letterSpacing);
+  color: var(--primary-600);
+  font-weight: 600;
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.footer {
+  background: var(--primary-500);
+  display: grid;
+  place-items: center;
+}
+
+.footer h2 {
+  color: var(--white);
+  font-size: 1.25rem;
+  text-align: center;
+  padding-top: 0.5rem;
+  letter-spacing: var(--letterSpacing);
+  margin-bottom: 0.5rem;
+}
+
+.footer-links {
+  /* border: 2px solid red; */
+  display: flex;
+  justify-content: space-between;
+  width: 40vw;
+  max-width: 300px;
+  margin: 0 auto;
+  margin-top: -1rem;
+}
+
+.footer-links a {
+  font-size: 1.5rem;
+  color: var(--primary-800);
+  transition: var(--transition);
+}
+.footer-links a:hover {
+  color: var(--primary-100);
+}
+
+@media screen and (min-width: 768px) {
+  .footer h2 {
+    font-size: 2rem;
+  }
+  .footer-links a {
+    font-size: 2rem;
+  }
+}
+
+table {
   margin: 0 auto;
 }
 
@@ -313,4 +492,15 @@ table,
 th,
 td {
   border: 1px solid var(--primary-500);
+}
+
+th {
+  padding: 0.5rem;
+  text-transform: capitalize;
+  letter-spacing: var(--letterSpacing);
+  color: var(--primary-500);
+}
+
+td {
+  width: 4rem;
 }
