@@ -15,5 +15,6 @@ This is a cash register app which tells the cashier/user rto return the amount i
   1. "Done" alert msg when the data is showm on the table
 - Red Color and slight increase in font-size for non-zero "No. of Notes"
 - I have used Event Delegation on BtnContainer.
+- Footer Links with target attribute
 
 [Live Link](https://neog-mark10-cash-register-manager-app.vercel.app/)
