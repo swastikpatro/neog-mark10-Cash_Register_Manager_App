@@ -342,7 +342,7 @@ body {
   display: grid;
   place-items: center;
   letter-spacing: var(--letterSpacing);
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .header p {
@@ -398,6 +398,7 @@ body {
 
 .bill-input input,
 .customer-input input {
+  font-size: 0.75rem;
   width: 90%;
   border: 2px solid var(--grey-200);
   letter-spacing: var(--letterSpacing);
@@ -441,6 +442,11 @@ body {
   .bill-input input::placeholder,
   .customer-input input::placeholder {
     font-size: 1rem;
+  }
+
+  .bill-input input,
+  .customer-input input {
+    font-size: 0.95rem;
   }
 
   .btn {
