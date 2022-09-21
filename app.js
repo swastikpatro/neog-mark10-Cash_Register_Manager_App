@@ -52,7 +52,7 @@ function displayData(data) {
     .join('');
 
   const numbersToShow = `
-  <th>no of note</th>
+  <th>no. of notes</th>
   ${myNumbers}
   `;
 
@@ -66,7 +66,7 @@ function displayData(data) {
     .join('');
 
   const notesToShow = `
-  <th>note</th>
+  <th>notes</th>
   ${myNotes}
   `;
 
