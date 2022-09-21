@@ -331,31 +331,36 @@ body {
 .header {
   /* border: 2px solid red; */
   position: relative;
-  height: 9rem;
 }
 
 .header .heading {
   height: 4rem;
+  /* border: 2px solid red; */
   background: var(--primary-500);
   color: var(--white);
-  font-size: 2rem;
+  font-size: 1.5rem;
   display: grid;
   place-items: center;
   letter-spacing: var(--letterSpacing);
+  margin-bottom: 0.5rem;
 }
 
 .header p {
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   margin: 0 auto;
   width: 80vw;
   max-width: 500px;
   /* border: 2px solid red; */
-  margin-bottom: 0.25rem;
+  margin-bottom: 0;
   color: var(--grey-500);
   letter-spacing: var(--letterSpacing);
 }
 
 @media screen and (min-width: 768px) {
+  .header .heading {
+    font-size: 2rem;
+    margin-bottom: 1.25rem;
+  }
   .header p {
     font-size: 1rem;
     margin-bottom: 1rem;
