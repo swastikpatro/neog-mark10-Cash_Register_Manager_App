@@ -27,3 +27,43 @@ const defaultData = notesArr.reduce((acc, curr) => {
   return acc;
 }, {});
 console.log(defaultData);
+
+function displayData(data) {
+  const dataArr = Object.entries(data).sort((a, b) => b[0] - a[0]);
+  const myNumbers = dataArr
+    .map((item) => {
+      const [, number] = item;
+      return `
+    <td class="number-${number}">${number}</td>
+    `;
+    })
+    .join('');
+
+  const numbersToShow = `
+  <th>no of note</th>
+  ${myNumbers}
+  `;
+
+  const myNotes = dataArr
+    .map((item) => {
+      const [note] = item;
+      return `
+    <td class="number-${note}">${note}</td>
+    `;
+    })
+    .join('');
+
+  const notesToShow = `
+  <th>note</th>
+  ${myNotes}
+  `;
+
+  table.innerHTML = `
+  <tr class="numbers">${numbersToShow}</tr>
+  <tr class="notes">${notesToShow}</tr>
+  `;
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  displayData(defaultData);
+});
