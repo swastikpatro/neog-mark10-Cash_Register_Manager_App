@@ -127,7 +127,7 @@ function handleContainerClick(e) {
     return;
   }
   if (billAmount < 0 || customerAmount < 0) {
-    alertMsg('danger', 'Bill or Cash should be positive.');
+    alertMsg('danger', "Bill or Cash can't be negative.");
     return;
   }
   const outputData = evaluateChange(billAmount, customerAmount, notesArr);
