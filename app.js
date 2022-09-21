@@ -119,15 +119,15 @@ function handleContainerClick(e) {
     alertMsg('danger', 'Please fill inputs with numbers only..');
     return;
   }
+  if (billAmount < 0 || customerAmount < 0) {
+    alertMsg('danger', "Bill or Cash can't be negative.");
+    return;
+  }
   if (billAmount > customerAmount) {
     alertMsg(
       'danger',
       `Customer please pay Rs. ${billAmount - customerAmount} more 🤨`
     );
-    return;
-  }
-  if (billAmount < 0 || customerAmount < 0) {
-    alertMsg('danger', "Bill or Cash can't be negative.");
     return;
   }
   const outputData = evaluateChange(billAmount, customerAmount, notesArr);
