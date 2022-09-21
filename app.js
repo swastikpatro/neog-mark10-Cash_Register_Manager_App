@@ -64,6 +64,42 @@ function displayData(data) {
   `;
 }
 
+function handleContainerClick(e) {
+  e.preventDefault();
+  if (!('btn' in e.target.dataset)) {
+    return;
+  }
+  const btnClicked = e.target.dataset.btn;
+  const billAmount = bill.valueAsNumber;
+  const customerAmount = customerGave.valueAsNumber;
+  if (btnClicked === 'clear') {
+    bill.value = '';
+    customerGave.value = '';
+    displayData(defaultData);
+    alertMsg('success', 'Cleared');
+    return;
+  }
+  if (!(bill.value && customerGave.value)) {
+    alertMsg('danger', 'Please fill inputs');
+    return;
+  }
+  if (billAmount > customerAmount) {
+    alertMsg(
+      'danger',
+      `Customer please pay Rs. ${billAmount - customerAmount} more 🤨`
+    );
+    return;
+  }
+  if (billAmount < 0 || customerAmount < 0) {
+    alertMsg('danger', 'Bill or Cash should be positive.');
+    return;
+  }
+  const outputData = evaluateChange(billAmount, customerAmount, notesArr);
+  displayData(outputData);
+}
+
 window.addEventListener('DOMContentLoaded', () => {
   displayData(defaultData);
 });
+
+btnContainer.addEventListener('click', handleContainerClick);
