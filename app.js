@@ -26,7 +26,11 @@ const defaultData = notesArr.reduce((acc, curr) => {
   acc[curr] = '-';
   return acc;
 }, {});
-console.log(defaultData);
+// console.log(defaultData);
+
+function checkAllValues(arr, val) {
+  return [...arr].every((number) => number == val);
+}
 
 function displayData(data) {
   const dataArr = Object.entries(data).sort((a, b) => b[0] - a[0]);
@@ -62,6 +66,13 @@ function displayData(data) {
   <tr class="numbers">${numbersToShow}</tr>
   <tr class="notes">${notesToShow}</tr>
   `;
+
+  const isNullified = checkAllValues([...Object.values(data)], 0);
+  const isDefault = checkAllValues([...Object.values(data)], '-');
+  if (isDefault) return;
+  isNullified
+    ? alertMsg('success', 'Dont pay anything back to customer')
+    : alertMsg('success', 'Done');
 }
 
 function evaluateChange(billVal, customerMoneyVal, currencyArr) {
