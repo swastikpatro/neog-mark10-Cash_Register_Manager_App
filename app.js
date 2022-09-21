@@ -23,7 +23,7 @@ function alertMsg(type, msg) {
 const notesArr = [2000, 500, 100, 50, 20, 10, 5, 2, 1];
 
 const defaultData = notesArr.reduce((acc, curr) => {
-  acc[curr] = '-';
+  acc[curr] = '--';
   return acc;
 }, {});
 // console.log(defaultData);
@@ -34,11 +34,19 @@ function checkAllValues(arr, val) {
 
 function displayData(data) {
   const dataArr = Object.entries(data).sort((a, b) => b[0] - a[0]);
+
   const myNumbers = dataArr
     .map((item) => {
       const [, number] = item;
+      const cond = number > 0;
       return `
-    <td class="number-${number}">${number}</td>
+    <td class="number-${number}" 
+    style= "
+    color:${cond ? 'red' : '#222'}; 
+    font-size:${cond ? '1.15rem' : '1rem'}";
+    >
+    ${number}
+    </td>
     `;
     })
     .join('');
@@ -68,7 +76,7 @@ function displayData(data) {
   `;
 
   const isNullified = checkAllValues([...Object.values(data)], 0);
-  const isDefault = checkAllValues([...Object.values(data)], '-');
+  const isDefault = checkAllValues([...Object.values(data)], '--');
   if (isDefault) return;
   isNullified
     ? alertMsg('success', 'Dont pay anything back to customer')
