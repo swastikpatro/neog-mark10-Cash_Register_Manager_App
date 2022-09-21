@@ -64,6 +64,23 @@ function displayData(data) {
   `;
 }
 
+function evaluateChange(billVal, customerMoneyVal, currencyArr) {
+  let returnMoney = customerMoneyVal - billVal;
+  const outputObjData = {};
+
+  for (let i = 0; i < currencyArr.length; i++) {
+    if (returnMoney < currencyArr[i]) {
+      outputObjData[currencyArr[i]] = 0;
+      // console.log(`${currencyArr[i]} skipped`);
+    } else {
+      outputObjData[currencyArr[i]] = Math.floor(returnMoney / currencyArr[i]);
+      returnMoney = returnMoney % currencyArr[i];
+    }
+  }
+  // console.log(returnMoney);
+  return outputObjData;
+}
+
 function handleContainerClick(e) {
   e.preventDefault();
   if (!('btn' in e.target.dataset)) {
