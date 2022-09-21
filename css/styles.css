@@ -323,8 +323,8 @@ body {
   color: var(--red-light);
 }
 .alert-success {
-  background: var(--green-dark);
-  color: var(--green-light);
+  background: var(--green-light);
+  color: var(--green-dark);
 }
 
 .alert.show-alert {
