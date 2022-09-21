@@ -325,16 +325,20 @@ Cash Register App
 body {
   height: 100vh;
   display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto auto;
+  gap: 0.5rem 0;
   text-align: center;
 }
 
 .header {
+  grid-area: 1 / 1 / span 1 / span 1;
   /* border: 2px solid red; */
   position: relative;
 }
 
 .header .heading {
-  height: 4rem;
+  height: 5rem;
   /* border: 2px solid red; */
   background: var(--primary-500);
   color: var(--white);
@@ -351,7 +355,6 @@ body {
   width: 80vw;
   max-width: 500px;
   /* border: 2px solid red; */
-  margin-bottom: 0.5rem;
   color: var(--grey-500);
   letter-spacing: var(--letterSpacing);
 }
@@ -359,16 +362,14 @@ body {
 @media screen and (min-width: 768px) {
   .header .heading {
     font-size: 2rem;
-    margin-bottom: 1.25rem;
   }
   .header p {
     font-size: 1rem;
-    margin-bottom: 1rem;
   }
 }
 
 [name='form'] {
-  height: 13rem;
+  grid-area: 2 / 1 / span 1 / span 1;
   margin: 0 auto;
   width: 80vw;
   max-width: 800px;
@@ -424,16 +425,17 @@ body {
 .btn-container {
   width: 60vw;
   max-width: 400px;
-  margin: 2rem auto;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-items: center;
+  margin-top: 2rem;
   /* border: 2px solid red; */
 }
 
 .btn {
   font-size: 0.75rem;
-  padding: 0.25rem 1rem;
+  padding: 0.35rem 1.25rem;
 }
 
 @media screen and (min-width: 680px) {
@@ -456,11 +458,11 @@ body {
 }
 
 .output-section {
+  grid-area: 3 / 1 / span 1 / span 1;
   /* border: 2px solid red; */
   width: 85vw;
   margin: 0 auto;
   margin-top: 0;
-  margin-bottom: 2rem;
 }
 
 .output-section h3 {
@@ -470,39 +472,41 @@ body {
   color: var(--primary-600);
   font-weight: 600;
   margin-top: 0.5rem;
-  margin-bottom: 0.75rem;
 }
 
 .footer {
+  grid-area: 4 / 1 / span 1 / span 1;
   background: var(--primary-500);
   display: grid;
-  place-items: center;
+  gap: 0;
+  justify-items: center;
 }
 
 .footer h2 {
   color: var(--white);
-  display: block;
   width: 85vw;
   max-width: 700px;
   font-size: 1.15rem;
   text-align: center;
-  padding-top: 0.5rem;
+  padding-top: 1rem;
   letter-spacing: var(--letterSpacing);
-  margin-bottom: 1rem;
+  /* border: 2px solid red; */
+  margin: 0;
 }
 
 .footer-links {
   /* border: 2px solid red; */
+  align-self: start;
   display: flex;
   justify-content: space-between;
   width: 40vw;
   max-width: 300px;
   margin: 0 auto;
-  margin-top: -1rem;
+  margin-top: -0.25rem;
 }
 
 .footer-links a {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   color: var(--primary-800);
   transition: var(--transition);
 }
@@ -514,7 +518,6 @@ body {
 @media screen and (min-width: 768px) {
   .footer h2 {
     font-size: 1.75rem;
-    margin-bottom: 1rem;
   }
   .footer-links a {
     font-size: 2rem;
@@ -538,7 +541,6 @@ th {
   padding: 0.75rem;
   text-transform: capitalize;
   letter-spacing: var(--letterSpacing);
-  /* color: var(--primary-500); */
 }
 
 tr.numbers td {
