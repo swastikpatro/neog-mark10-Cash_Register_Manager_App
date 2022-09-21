@@ -297,16 +297,6 @@ Cash Register App
 ==================
 */
 
-body {
-  height: 100vh;
-  display: grid;
-  text-align: center;
-}
-
-.header {
-  position: relative;
-}
-
 .alert {
   position: absolute;
   top: 0%;
@@ -332,34 +322,53 @@ body {
   opacity: 1;
 }
 
+body {
+  height: 100vh;
+  display: grid;
+  text-align: center;
+}
+
+.header {
+  /* border: 2px solid red; */
+  position: relative;
+}
+
 .header .heading {
   height: 4rem;
+  /* border: 2px solid red; */
   background: var(--primary-500);
   color: var(--white);
-  font-size: 2rem;
+  font-size: 1.5rem;
   display: grid;
   place-items: center;
   letter-spacing: var(--letterSpacing);
+  margin-bottom: 0.5rem;
 }
 
 .header p {
+  font-size: 0.75rem;
   margin: 0 auto;
   width: 80vw;
   max-width: 500px;
   /* border: 2px solid red; */
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
   color: var(--grey-500);
   letter-spacing: var(--letterSpacing);
 }
 
 @media screen and (min-width: 768px) {
+  .header .heading {
+    font-size: 2rem;
+    margin-bottom: 1.25rem;
+  }
   .header p {
+    font-size: 1rem;
     margin-bottom: 1rem;
   }
 }
 
 [name='form'] {
-  height: 30vh;
+  height: 13rem;
   margin: 0 auto;
   width: 80vw;
   max-width: 800px;
@@ -382,12 +391,14 @@ body {
 
 .bill-input label,
 .customer-input label {
+  font-size: 0.75rem;
   text-transform: capitalize;
   letter-spacing: var(--letterSpacing);
 }
 
 .bill-input input,
 .customer-input input {
+  width: 90%;
   border: 2px solid var(--grey-200);
   letter-spacing: var(--letterSpacing);
   padding: 0.25rem 0.75rem;
@@ -398,7 +409,7 @@ body {
 
 .bill-input input::placeholder,
 .customer-input input::placeholder {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-style: italic;
   letter-spacing: var(--letterSpacing);
 }
@@ -420,8 +431,22 @@ body {
 }
 
 .btn {
-  font-size: 1rem;
-  padding: 0.5rem 1.5rem;
+  font-size: 0.75rem;
+  padding: 0.25rem 1rem;
+}
+
+@media screen and (min-width: 680px) {
+  .bill-input label,
+  .customer-input label,
+  .bill-input input::placeholder,
+  .customer-input input::placeholder {
+    font-size: 1rem;
+  }
+
+  .btn {
+    font-size: 1rem;
+    padding: 0.5rem 1.5rem;
+  }
 }
 
 .output-section {
@@ -429,6 +454,7 @@ body {
   width: 85vw;
   margin: 0 auto;
   margin-top: 0;
+  margin-bottom: 2rem;
 }
 
 .output-section h3 {
@@ -449,11 +475,14 @@ body {
 
 .footer h2 {
   color: var(--white);
-  font-size: 1.25rem;
+  display: block;
+  width: 85vw;
+  max-width: 700px;
+  font-size: 1.15rem;
   text-align: center;
   padding-top: 0.5rem;
   letter-spacing: var(--letterSpacing);
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .footer-links {
@@ -471,13 +500,15 @@ body {
   color: var(--primary-800);
   transition: var(--transition);
 }
+
 .footer-links a:hover {
   color: var(--primary-100);
 }
 
 @media screen and (min-width: 768px) {
   .footer h2 {
-    font-size: 2rem;
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
   }
   .footer-links a {
     font-size: 2rem;
@@ -486,21 +517,42 @@ body {
 
 table {
   margin: 0 auto;
+  background: var(--primary-300);
+  color: var(--white);
 }
 
 table,
 th,
 td {
-  border: 1px solid var(--primary-500);
+  border: 1px solid var(--primary-800);
 }
 
 th {
-  padding: 0.5rem;
+  font-size: 0.75rem;
+  padding: 0.75rem;
   text-transform: capitalize;
   letter-spacing: var(--letterSpacing);
-  color: var(--primary-500);
+  /* color: var(--primary-500); */
+}
+
+tr.numbers td {
+  font-weight: 700;
+  color: var(--white);
 }
 
 td {
   width: 4rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: var(--letterSpacing);
+}
+
+@media screen and (min-width: 680px) {
+  th {
+    font-size: 1rem;
+  }
+
+  td {
+    font-size: 1rem;
+  }
 }
