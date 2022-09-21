@@ -475,7 +475,6 @@ body {
 
 .footer h2 {
   color: var(--white);
-  border: 2px solid red;
   display: block;
   width: 85vw;
   max-width: 700px;
