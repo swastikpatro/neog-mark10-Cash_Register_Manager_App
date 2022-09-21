@@ -116,7 +116,7 @@ function handleContainerClick(e) {
     return;
   }
   if (!(bill.value && customerGave.value)) {
-    alertMsg('danger', 'Please fill inputs');
+    alertMsg('danger', 'Please fill inputs with numbers only..');
     return;
   }
   if (billAmount > customerAmount) {
