@@ -10,6 +10,7 @@ This is a cash register app which tells the cashier/user rto return the amount i
 - I have added alerts for the following:
   1. Empty Inputs
   1. Negative inputs
+  1. Alerts with "asking for the extra money from customers" when cash given by customer is less than the bill amount.
   1. Onclicking clear btn
   1. "Don't pay back msg" when bill is equal to amount given by customer.
   1. "Done" alert msg when the data is showm on the table
