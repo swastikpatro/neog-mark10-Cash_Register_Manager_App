@@ -42,7 +42,7 @@ function displayData(data) {
       return `
     <td class="number-${number}" 
     style= "
-    color:${cond ? 'red' : '#222'}; 
+    color:${cond ? '#222' : '#fff'}; 
     font-size:${cond ? '1.15rem' : '1rem'}";
     >
     ${number}
