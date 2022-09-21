@@ -370,6 +370,7 @@ body {
 
 [name='form'] {
   grid-area: 2 / 1 / span 1 / span 1;
+  height: fit-content;
   margin: 0 auto;
   width: 80vw;
   max-width: 800px;
@@ -377,6 +378,7 @@ body {
   background: var(--primary-100);
   padding: 2rem 1rem;
   border-radius: 1rem;
+  /* display: grid; */
 }
 
 .bill-input,
