@@ -2,6 +2,8 @@
 
 This is a cash register app which tells the cashier/user rto return the amount in change to the excess money given by the customer in minimum number of notes.
 
+[Live Link](https://neog-mark10-cash-register-manager-app.vercel.app/)
+
 ## How it works ?
 
 - Enter the bill amount
@@ -14,8 +16,8 @@ This is a cash register app which tells the cashier/user rto return the amount i
   1. Onclicking clear btn
   1. "Don't pay back msg" when bill is equal to amount given by customer.
   1. "Done" alert msg when the data is showm on the table
-- Red Color and slight increase in font-size for non-zero "No. of Notes"
+- Black Color and slight increase in font-size for non-zero "No. of Notes"
 - I have used Event Delegation on BtnContainer.
+- Clicking Clear button empties all input fields,empties the output.
+- **(Additional feature)** If you click input with output showing for previous inputs, we assume you are changing the inputs, so we clear down the output.
 - Footer Links with target attribute
-
-[Live Link](https://neog-mark10-cash-register-manager-app.vercel.app/)
