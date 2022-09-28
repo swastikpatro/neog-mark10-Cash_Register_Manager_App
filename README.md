@@ -4,6 +4,12 @@ This is a cash register app which tells the cashier/user rto return the amount i
 
 [Live Link](https://neog-mark10-cash-register-manager-app.vercel.app/)
 
+## Tech Used
+
+- HTML
+- CSS
+- JS
+
 ## How it works ?
 
 - Enter the bill amount
