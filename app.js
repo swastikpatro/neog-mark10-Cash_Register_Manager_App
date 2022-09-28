@@ -139,3 +139,9 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 btnContainer.addEventListener('click', handleContainerClick);
+
+[...document.querySelectorAll('input[type="number"]')].forEach((input) => {
+  input.addEventListener('click', () => {
+    displayData(defaultData);
+  });
+});
