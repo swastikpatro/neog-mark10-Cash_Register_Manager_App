@@ -1,24 +1,10 @@
-console.log('Hare Krishna');
+// console.log('Hare Krishna');
 
 const bill = document.getElementById('bill-input');
 const customerGave = document.getElementById('customer-input');
 const btnContainer = document.querySelector('.btn-container');
-const alertText = document.querySelector('.alert');
+const errorMsg = document.querySelector('.error-msg');
 const table = document.querySelector('.table');
-
-function alertMsg(type, msg) {
-  const tID = setInterval(() => {
-    alertText.innerText = msg;
-    alertText.classList.add(`alert-${type}`);
-    alertText.classList.add('show-alert');
-  }, 0);
-
-  setTimeout(() => {
-    clearInterval(tID);
-    alertText.classList.remove(`alert-${type}`);
-    alertText.classList.remove('show-alert');
-  }, 1000);
-}
 
 const notesArr = [2000, 500, 100, 50, 20, 10, 5, 2, 1];
 
@@ -30,6 +16,10 @@ const defaultData = notesArr.reduce((acc, curr) => {
 
 function checkAllValues(arr, val) {
   return [...arr].every((number) => number == val);
+}
+
+function displayErrorMsgToUser(text) {
+  errorMsg.innerHTML = `<span>${text}</span>`;
 }
 
 function displayData(data) {
@@ -71,16 +61,14 @@ function displayData(data) {
   `;
 
   table.innerHTML = `
-  <tr class="numbers">${numbersToShow}</tr>
   <tr class="notes">${notesToShow}</tr>
+  <tr class="numbers">${numbersToShow}</tr>
   `;
 
   const isNullified = checkAllValues([...Object.values(data)], 0);
   const isDefault = checkAllValues([...Object.values(data)], '--');
   if (isDefault) return;
-  isNullified
-    ? alertMsg('success', 'Dont pay anything back to customer')
-    : alertMsg('success', 'Done');
+  isNullified && displayErrorMsgToUser('Dont pay anything back to customer');
 }
 
 function evaluateChange(billVal, customerMoneyVal, currencyArr) {
@@ -111,21 +99,20 @@ function handleContainerClick(e) {
   if (btnClicked === 'clear') {
     bill.value = '';
     customerGave.value = '';
+    errorMsg.innerHTML = '';
     displayData(defaultData);
-    alertMsg('success', 'Cleared');
     return;
   }
   if (!(bill.value && customerGave.value)) {
-    alertMsg('danger', 'Please fill inputs with numbers only..');
+    displayErrorMsgToUser('Please fill inputs with numbers only..');
     return;
   }
-  if (billAmount < 0 || customerAmount < 0) {
-    alertMsg('danger', "Bill or Cash can't be negative.");
+  if (billAmount <= 0 || customerAmount <= 0) {
+    displayErrorMsgToUser("Bill or Cash can't be zero or negative.");
     return;
   }
   if (billAmount > customerAmount) {
-    alertMsg(
-      'danger',
+    displayErrorMsgToUser(
       `Customer please pay Rs. ${billAmount - customerAmount} more 🤨`
     );
     return;
@@ -142,6 +129,7 @@ btnContainer.addEventListener('click', handleContainerClick);
 
 [...document.querySelectorAll('input[type="number"]')].forEach((input) => {
   input.addEventListener('click', () => {
+    errorMsg.innerHTML = '';
     displayData(defaultData);
   });
 });
