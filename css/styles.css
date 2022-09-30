@@ -566,3 +566,9 @@ td {
     font-size: 1rem;
   }
 }
+
+.error-msg {
+  color: red;
+  margin-top: 0.5rem;
+  letter-spacing: var(--letterSpacing);
+}
