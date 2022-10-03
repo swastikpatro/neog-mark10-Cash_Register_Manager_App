@@ -24,3 +24,7 @@ This is a cash register app which tells the cashier/user rto return the amount i
 - Clicking Clear button empties all input fields,defaults the output and clears the error message (if present on the screen).
 - **(Additional feature)** If you click input with output present for previous inputs, we assume you are changing the inputs, so we clear down the output.
 - Footer Links with target attribute
+
+## Snapshot of the app
+
+![Cash Register Manager App](./cash-register-snap.JPG)
